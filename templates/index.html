@@ -17,7 +17,7 @@
             <tr>
                 <td>{{task.content}}</td>
                 <td>{{task.date_created}}</td>
-                <td><a href = "">Delete</a><br/><a href = "">Update</a></td>
+                <td><a href = "/delete/{{task.id}}">Delete</a><br/><a href = "">Update</a></td>
             </tr>
             {% endfor %}
         </table>
