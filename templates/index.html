@@ -1,10 +1,30 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block head %}
 
 
 {% endblock %}
 {% block body %}
+    <div class = "content">
+        <h1 style="text-align:center;">TODO list</h1>
+        <table>
+            <tr>
+                <th>Task ID</th>
+                <th>Task</th>
+                <th>Action</th>
+            </tr>
+            {% for task in tasks%}
+            <tr>
+                <td>{{task.content}}</td>
+                <td>{{task.date_created}}</td>
+                <td><a href = "">Delete</a><br/><a href = "">Update</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 
-<h1>template</h1>
+    <form method = 'POST'>
+        <input type="text" name = "content" id = "content"><br>
+        <input type="submit" value="Add Task">
+    </form>
 {% endblock %}
